@@ -1,0 +1,171 @@
+{
+  "audit_only": true,
+  "allowed_as_prediction_input": false,
+  "audit_schema_version": "00_raw_dataset_audit_v2.1_audit_hardening",
+  "primary_source_for_clinical_input_policy": "vignette",
+  "ground_truth_source_policy": "audit_only_consistency_reference",
+  "data_validity_and_clinical_state_are_separate": true,
+  "thresholds_for_audit_only": {
+    "temperature": {
+      "low_abnormal": 96.0,
+      "high_abnormal": 100.4,
+      "low_danger": 95.0,
+      "high_danger": 103.0
+    },
+    "heartrate": {
+      "low_abnormal": 50.0,
+      "high_abnormal": 100.0,
+      "low_danger": 40.0,
+      "high_danger": 130.0
+    },
+    "resprate": {
+      "low_abnormal": 10.0,
+      "high_abnormal": 20.0,
+      "low_danger": 8.0,
+      "high_danger": 30.0
+    },
+    "o2sat": {
+      "low_abnormal": 95.0,
+      "high_abnormal": null,
+      "low_danger": 92.0,
+      "high_danger": null
+    },
+    "sbp": {
+      "low_abnormal": 90.0,
+      "high_abnormal": 180.0,
+      "low_danger": 90.0,
+      "high_danger": 200.0
+    }
+  },
+  "plausibility_ranges_and_units": {
+    "temperature": {
+      "unit": "fahrenheit",
+      "min": 80.0,
+      "max": 110.0
+    },
+    "heartrate": {
+      "unit": "beats_per_minute",
+      "min": 20.0,
+      "max": 260.0
+    },
+    "resprate": {
+      "unit": "breaths_per_minute",
+      "min": 4.0,
+      "max": 80.0
+    },
+    "o2sat": {
+      "unit": "percent",
+      "min": 40.0,
+      "max": 100.0
+    },
+    "sbp": {
+      "unit": "mmHg",
+      "min": 40.0,
+      "max": 300.0
+    }
+  },
+  "numeric_summary_by_vital": {
+    "temperature": {
+      "count": 687,
+      "min": 94.8,
+      "max": 102.7,
+      "mean": 98.039,
+      "median": 98.0
+    },
+    "heartrate": {
+      "count": 688,
+      "min": 43.0,
+      "max": 160.0,
+      "mean": 86.1453,
+      "median": 85.0
+    },
+    "resprate": {
+      "count": 688,
+      "min": 10.0,
+      "max": 38.0,
+      "mean": 17.6076,
+      "median": 18.0
+    },
+    "o2sat": {
+      "count": 688,
+      "min": 83.0,
+      "max": 100.0,
+      "mean": 98.4884,
+      "median": 99.0
+    },
+    "sbp": {
+      "count": 687,
+      "min": 68.0,
+      "max": 257.0,
+      "mean": 134.9025,
+      "median": 133.0
+    }
+  },
+  "abnormal_vital_counts_by_acuity": {
+    "1": {
+      "heartrate": 12,
+      "o2sat": 6,
+      "resprate": 10,
+      "sbp": 13,
+      "temperature": 2
+    },
+    "2": {
+      "heartrate": 46,
+      "o2sat": 10,
+      "resprate": 21,
+      "sbp": 10,
+      "temperature": 5
+    },
+    "4": {
+      "heartrate": 14,
+      "resprate": 2
+    },
+    "3": {
+      "heartrate": 58,
+      "o2sat": 4,
+      "resprate": 4,
+      "sbp": 7,
+      "temperature": 9
+    },
+    "5": {
+      "heartrate": 12,
+      "o2sat": 2,
+      "temperature": 1
+    }
+  },
+  "danger_zone_vital_counts_by_acuity": {
+    "1": {
+      "heartrate": 9,
+      "o2sat": 6,
+      "resprate": 3,
+      "sbp": 12
+    },
+    "2": {
+      "o2sat": 1,
+      "resprate": 1,
+      "sbp": 4,
+      "temperature": 1
+    }
+  },
+  "cases_with_any_abnormal_vital_by_acuity": {
+    "1": 31,
+    "2": 77,
+    "3": 76,
+    "4": 16,
+    "5": 15
+  },
+  "cases_with_any_danger_zone_vital_by_acuity": {
+    "1": 29,
+    "2": 7
+  },
+  "gt1_gt2_with_no_abnormal_vitals_count": 136,
+  "gt4_gt5_with_any_abnormal_vital_count": 31,
+  "vignette_vs_ground_truth_vital_mismatch_count": 0,
+  "vignette_vital_contract_issue_count": 2,
+  "ground_truth_vital_contract_issue_count": 2,
+  "system_vital_event_count": 1880,
+  "system_vital_instance_count": 659,
+  "system_vital_unique_case_id_count": 529,
+  "system_vital_multiple_distinct_value_instance_field_count": 0,
+  "system_vital_latest_vs_vignette_mismatch_count": 0
+}

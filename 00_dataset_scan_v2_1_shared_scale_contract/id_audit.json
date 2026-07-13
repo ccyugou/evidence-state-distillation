@@ -1,0 +1,19 @@
+{
+  "audit_only": true,
+  "allowed_as_prediction_input": false,
+  "audit_schema_version": "00_raw_dataset_audit_v2.1_audit_hardening",
+  "dataset_counts": {
+    "mimic": 688
+  },
+  "case_id_unique": 541,
+  "case_id_duplicate_groups": 147,
+  "case_id_duplicate_total_extra_rows": 147,
+  "run_uuid_unique": 688,
+  "run_uuid_duplicate_groups": 0,
+  "instance_id_definition": "case_id__run_uuid",
+  "instance_id_unique": 688,
+  "instance_id_duplicate_groups": 0,
+  "dataset_instance_id_definition": "dataset__case_id__run_uuid",
+  "dataset_instance_id_unique": 688,
+  "dataset_instance_id_duplicate_groups": 0
+}
