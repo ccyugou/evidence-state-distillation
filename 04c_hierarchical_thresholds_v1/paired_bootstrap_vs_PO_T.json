@@ -1,0 +1,442 @@
+{
+  "DUAL_FULL40_B2a_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "DUAL_FULL40_B2a",
+    "delta_convention": "DUAL_FULL40_B2a_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": 0.02412888456450866,
+        "median_delta": 0.025230919611188535,
+        "ci95": [
+          -0.04041441872351257,
+          0.08654598246201126
+        ],
+        "probability_delta_positive": 0.782
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": -0.021684571825594492,
+        "median_delta": -0.02298288054608827,
+        "ci95": [
+          -0.11351234085420006,
+          0.06957823588117588
+        ],
+        "probability_delta_positive": 0.324
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": -0.015891891891891892,
+        "median_delta": -0.016891891891891886,
+        "ci95": [
+          -0.07094594594594594,
+          0.04054054054054054
+        ],
+        "probability_delta_positive": 0.274
+      },
+      "log_loss": {
+        "mean_delta": 0.017959211305049003,
+        "median_delta": 0.017939307631581525,
+        "ci95": [
+          -0.007465253504031255,
+          0.042841817949549756
+        ],
+        "probability_delta_positive": 0.908
+      },
+      "brier_score": {
+        "mean_delta": 0.011620511366009431,
+        "median_delta": 0.011715851489512152,
+        "ci95": [
+          0.0009862124185061579,
+          0.023067800626942348
+        ],
+        "probability_delta_positive": 0.982
+      }
+    }
+  },
+  "DUAL_ORTHO23_B2a_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "DUAL_ORTHO23_B2a",
+    "delta_convention": "DUAL_ORTHO23_B2a_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": 0.02631941894146158,
+        "median_delta": 0.026443195603000735,
+        "ci95": [
+          -0.041481157570962414,
+          0.10505187596412963
+        ],
+        "probability_delta_positive": 0.764
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": 0.002945677557962433,
+        "median_delta": 0.0013448901408221747,
+        "ci95": [
+          -0.08401123243062354,
+          0.09143972302058208
+        ],
+        "probability_delta_positive": 0.51
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": -0.016797297297297297,
+        "median_delta": -0.016891891891891886,
+        "ci95": [
+          -0.07432432432432437,
+          0.03716216216216217
+        ],
+        "probability_delta_positive": 0.258
+      },
+      "log_loss": {
+        "mean_delta": 0.014002154931477082,
+        "median_delta": 0.014047441412331718,
+        "ci95": [
+          -0.011256808228503641,
+          0.041951382663589554
+        ],
+        "probability_delta_positive": 0.824
+      },
+      "brier_score": {
+        "mean_delta": 0.011193851849413317,
+        "median_delta": 0.011275360790277161,
+        "ci95": [
+          -0.0008017898763188643,
+          0.02259984041169968
+        ],
+        "probability_delta_positive": 0.962
+      }
+    }
+  },
+  "CONDITIONAL_FULL40_B2a_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "CONDITIONAL_FULL40_B2a",
+    "delta_convention": "CONDITIONAL_FULL40_B2a_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": 0.0012225585078947758,
+        "median_delta": 0.002485144158420105,
+        "ci95": [
+          -0.06046637474067894,
+          0.05921866960542245
+        ],
+        "probability_delta_positive": 0.532
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": -0.05091951762732495,
+        "median_delta": -0.046418461508064,
+        "ci95": [
+          -0.1636862355526496,
+          0.041614941314586595
+        ],
+        "probability_delta_positive": 0.164
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": 0.02716891891891892,
+        "median_delta": 0.02702702702702703,
+        "ci95": [
+          -0.02702702702702703,
+          0.08623310810810804
+        ],
+        "probability_delta_positive": 0.82
+      },
+      "log_loss": {
+        "mean_delta": 0.005149352670968294,
+        "median_delta": 0.004669756465217445,
+        "ci95": [
+          -0.022438617085543754,
+          0.03257780096157091
+        ],
+        "probability_delta_positive": 0.642
+      },
+      "brier_score": {
+        "mean_delta": 0.0015085814507962451,
+        "median_delta": 0.0014147068693756981,
+        "ci95": [
+          -0.008774279615951902,
+          0.011601493581515281
+        ],
+        "probability_delta_positive": 0.58
+      }
+    }
+  },
+  "CONDITIONAL_ORTHO23_B2a_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "CONDITIONAL_ORTHO23_B2a",
+    "delta_convention": "CONDITIONAL_ORTHO23_B2a_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": 0.0465799259902475,
+        "median_delta": 0.045415864611491996,
+        "ci95": [
+          -0.011574730042546751,
+          0.11564946450664379
+        ],
+        "probability_delta_positive": 0.934
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": 0.01842943967642195,
+        "median_delta": 0.019194221398447175,
+        "ci95": [
+          -0.07934992271797472,
+          0.11264875488889446
+        ],
+        "probability_delta_positive": 0.648
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": -0.01620945945945946,
+        "median_delta": -0.016891891891891886,
+        "ci95": [
+          -0.07432432432432434,
+          0.047297297297297286
+        ],
+        "probability_delta_positive": 0.286
+      },
+      "log_loss": {
+        "mean_delta": 0.0024428433212310523,
+        "median_delta": 0.0025312656276893497,
+        "ci95": [
+          -0.024188235600406803,
+          0.03176650030346983
+        ],
+        "probability_delta_positive": 0.56
+      },
+      "brier_score": {
+        "mean_delta": 0.002181231560550314,
+        "median_delta": 0.0022301857945333237,
+        "ci95": [
+          -0.009369068280652548,
+          0.012690596752968665
+        ],
+        "probability_delta_positive": 0.644
+      }
+    }
+  },
+  "DUAL_FULL40_B2b_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "DUAL_FULL40_B2b",
+    "delta_convention": "DUAL_FULL40_B2b_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": -0.003182154584693139,
+        "median_delta": -0.0028221243282630093,
+        "ci95": [
+          -0.07541883599406772,
+          0.07174694808072896
+        ],
+        "probability_delta_positive": 0.47
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": -0.0029196667263401387,
+        "median_delta": -0.0008808270727407863,
+        "ci95": [
+          -0.08365767206759665,
+          0.07429044809090336
+        ],
+        "probability_delta_positive": 0.494
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": -0.06541216216216215,
+        "median_delta": -0.0641891891891892,
+        "ci95": [
+          -0.11486486486486486,
+          -0.016891891891891886
+        ],
+        "probability_delta_positive": 0.002
+      },
+      "log_loss": {
+        "mean_delta": 0.017959211305049003,
+        "median_delta": 0.017939307631581525,
+        "ci95": [
+          -0.007465253504031255,
+          0.042841817949549756
+        ],
+        "probability_delta_positive": 0.908
+      },
+      "brier_score": {
+        "mean_delta": 0.011620511366009431,
+        "median_delta": 0.011715851489512152,
+        "ci95": [
+          0.0009862124185061579,
+          0.023067800626942348
+        ],
+        "probability_delta_positive": 0.982
+      }
+    }
+  },
+  "DUAL_ORTHO23_B2b_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "DUAL_ORTHO23_B2b",
+    "delta_convention": "DUAL_ORTHO23_B2b_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": 0.023430124226561034,
+        "median_delta": 0.023203149599805906,
+        "ci95": [
+          -0.048445054356860646,
+          0.092109953237619
+        ],
+        "probability_delta_positive": 0.752
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": 0.03433067421805624,
+        "median_delta": 0.03529041269410532,
+        "ci95": [
+          -0.06491973867537351,
+          0.13078593964236415
+        ],
+        "probability_delta_positive": 0.762
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": -0.08,
+        "median_delta": -0.07770270270270274,
+        "ci95": [
+          -0.13851351351351354,
+          -0.020270270270270258
+        ],
+        "probability_delta_positive": 0.004
+      },
+      "log_loss": {
+        "mean_delta": 0.014002154931477082,
+        "median_delta": 0.014047441412331718,
+        "ci95": [
+          -0.011256808228503641,
+          0.041951382663589554
+        ],
+        "probability_delta_positive": 0.824
+      },
+      "brier_score": {
+        "mean_delta": 0.011193851849413317,
+        "median_delta": 0.011275360790277161,
+        "ci95": [
+          -0.0008017898763188643,
+          0.02259984041169968
+        ],
+        "probability_delta_positive": 0.962
+      }
+    }
+  },
+  "CONDITIONAL_FULL40_B2b_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "CONDITIONAL_FULL40_B2b",
+    "delta_convention": "CONDITIONAL_FULL40_B2b_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": -0.024018491245079383,
+        "median_delta": -0.025865868681162113,
+        "ci95": [
+          -0.0958919289374277,
+          0.05156496610479776
+        ],
+        "probability_delta_positive": 0.254
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": -0.07190279425939945,
+        "median_delta": -0.07058164038080528,
+        "ci95": [
+          -0.20308349288808852,
+          0.04130427423360469
+        ],
+        "probability_delta_positive": 0.126
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": -0.04881081081081082,
+        "median_delta": -0.05067567567567566,
+        "ci95": [
+          -0.10810810810810811,
+          0.005152027027026954
+        ],
+        "probability_delta_positive": 0.034
+      },
+      "log_loss": {
+        "mean_delta": 0.005149352670968294,
+        "median_delta": 0.004669756465217445,
+        "ci95": [
+          -0.022438617085543754,
+          0.03257780096157091
+        ],
+        "probability_delta_positive": 0.642
+      },
+      "brier_score": {
+        "mean_delta": 0.0015085814507962451,
+        "median_delta": 0.0014147068693756981,
+        "ci95": [
+          -0.008774279615951902,
+          0.011601493581515281
+        ],
+        "probability_delta_positive": 0.58
+      }
+    }
+  },
+  "CONDITIONAL_ORTHO23_B2b_vs_PO_T": {
+    "case_count": 296,
+    "repetitions": 500,
+    "seed": 20260713,
+    "baseline": "PO_T_nested_threshold_p05",
+    "variant": "CONDITIONAL_ORTHO23_B2b",
+    "delta_convention": "CONDITIONAL_ORTHO23_B2b_minus_PO_T_nested_threshold_p05",
+    "metrics": {
+      "macro_f1": {
+        "mean_delta": 0.008016981954355941,
+        "median_delta": 0.009010000589036199,
+        "ci95": [
+          -0.05491929131274459,
+          0.06603389528244503
+        ],
+        "probability_delta_positive": 0.614
+      },
+      "quadratic_weighted_kappa": {
+        "mean_delta": -0.003249682506177206,
+        "median_delta": -0.004442012323779276,
+        "ci95": [
+          -0.09860510555382604,
+          0.09501584962332707
+        ],
+        "probability_delta_positive": 0.478
+      },
+      "mean_absolute_ordinal_error": {
+        "mean_delta": -0.0522972972972973,
+        "median_delta": -0.054054054054054,
+        "ci95": [
+          -0.10810810810810811,
+          0.008530405405405297
+        ],
+        "probability_delta_positive": 0.04
+      },
+      "log_loss": {
+        "mean_delta": 0.0024428433212310523,
+        "median_delta": 0.0025312656276893497,
+        "ci95": [
+          -0.024188235600406803,
+          0.03176650030346983
+        ],
+        "probability_delta_positive": 0.56
+      },
+      "brier_score": {
+        "mean_delta": 0.002181231560550314,
+        "median_delta": 0.0022301857945333237,
+        "ci95": [
+          -0.009369068280652548,
+          0.012690596752968665
+        ],
+        "probability_delta_positive": 0.644
+      }
+    }
+  }
+}

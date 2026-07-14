@@ -1,0 +1,468 @@
+{
+  "schema_version": "04c_orthogonal_ablation_v1",
+  "input_audit_hash": "83da62683a315f1e24a59951fc1dafaa45f000f63fca7de3de08cbc09ce2b134",
+  "variants": [
+    {
+      "variant": "FULL40_B0_natural_argmax_p05",
+      "feature_set": "FULL40",
+      "feature_count": 40,
+      "removed_quality_features": [],
+      "partial_weight": 0.5,
+      "class_weight_scheme": "natural",
+      "threshold_mode": false,
+      "common_cohort": {
+        "count": 296,
+        "accuracy": 0.7195945945945946,
+        "macro_f1": 0.27897838899803534,
+        "balanced_accuracy": 0.3333333333333333,
+        "quadratic_weighted_kappa": 0.0,
+        "mean_absolute_ordinal_error": 0.38175675675675674,
+        "log_loss": 0.7240220498291821,
+        "brier_score": 0.41204253749799935,
+        "class_metrics": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 30
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 53
+          },
+          "2": {
+            "precision": 0.7195945945945946,
+            "recall": 1.0,
+            "f1": 0.8369351669941061,
+            "support": 213
+          }
+        },
+        "predicted_class_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 296
+        },
+        "target_class_counts": {
+          "0": 30,
+          "1": 53,
+          "2": 213
+        },
+        "resource_under_estimation_count": 0,
+        "resource_over_estimation_count": 83,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            30
+          ],
+          [
+            0,
+            0,
+            53
+          ],
+          [
+            0,
+            0,
+            213
+          ]
+        ],
+        "ordinal_probability_diagnostics": {
+          "mean_expected_resource_score": 1.6880784791736758,
+          "mean_expected_score_by_target": {
+            "0": 1.53278978801727,
+            "1": 1.6480627681169675,
+            "2": 1.719907086782585
+          },
+          "mean_probability_2_plus_by_target": {
+            "0": 0.6586035413942607,
+            "1": 0.7336476628919877,
+            "2": 0.7851897327315506
+          },
+          "auc_r_ge_1": 0.7479949874686717,
+          "auc_r_ge_2": 0.6989365914361672,
+          "expected_score_spearman": 0.32371934444061223
+        }
+      }
+    },
+    {
+      "variant": "FULL40_T_nested_threshold_p05",
+      "feature_set": "FULL40",
+      "feature_count": 40,
+      "removed_quality_features": [],
+      "partial_weight": 0.5,
+      "class_weight_scheme": "natural",
+      "threshold_mode": true,
+      "common_cohort": {
+        "count": 296,
+        "accuracy": 0.6452702702702703,
+        "macro_f1": 0.4491335594884236,
+        "balanced_accuracy": 0.4607995984291493,
+        "quadratic_weighted_kappa": 0.3561421619230202,
+        "mean_absolute_ordinal_error": 0.4358108108108108,
+        "log_loss": 0.7240220498291821,
+        "brier_score": 0.41204253749799935,
+        "class_metrics": {
+          "0": {
+            "precision": 0.35135135135135137,
+            "recall": 0.43333333333333335,
+            "f1": 0.3880597014925374,
+            "support": 30
+          },
+          "1": {
+            "precision": 0.18181818181818182,
+            "recall": 0.1509433962264151,
+            "f1": 0.16494845360824742,
+            "support": 53
+          },
+          "2": {
+            "precision": 0.7906976744186046,
+            "recall": 0.7981220657276995,
+            "f1": 0.794392523364486,
+            "support": 213
+          }
+        },
+        "predicted_class_counts": {
+          "0": 37,
+          "1": 44,
+          "2": 215
+        },
+        "target_class_counts": {
+          "0": 30,
+          "1": 53,
+          "2": 213
+        },
+        "resource_under_estimation_count": 53,
+        "resource_over_estimation_count": 52,
+        "confusion_matrix": [
+          [
+            13,
+            7,
+            10
+          ],
+          [
+            10,
+            8,
+            35
+          ],
+          [
+            14,
+            29,
+            170
+          ]
+        ],
+        "ordinal_probability_diagnostics": {
+          "mean_expected_resource_score": 1.6880784791736758,
+          "mean_expected_score_by_target": {
+            "0": 1.53278978801727,
+            "1": 1.6480627681169675,
+            "2": 1.719907086782585
+          },
+          "mean_probability_2_plus_by_target": {
+            "0": 0.6586035413942607,
+            "1": 0.7336476628919877,
+            "2": 0.7851897327315506
+          },
+          "auc_r_ge_1": 0.7479949874686717,
+          "auc_r_ge_2": 0.6989365914361672,
+          "expected_score_spearman": 0.32371934444061223
+        }
+      }
+    },
+    {
+      "variant": "ORTHO23_B0_natural_argmax_p05",
+      "feature_set": "ORTHO23",
+      "feature_count": 23,
+      "removed_quality_features": [
+        "claim_field_active_bleeding_uncertain",
+        "claim_field_altered_mental_status_uncertain",
+        "claim_field_chest_pain_or_acs_concern_uncertain",
+        "claim_field_dizziness_uncertain",
+        "claim_field_dyspnea_uncertain",
+        "claim_field_fever_or_infection_uncertain",
+        "claim_field_gi_bleeding_melena_uncertain",
+        "claim_field_pain_uncertain",
+        "claim_field_pregnancy_status_or_context_uncertain",
+        "claim_field_respiratory_distress_uncertain",
+        "claim_field_severe_pain_uncertain",
+        "claim_field_stroke_signs_uncertain",
+        "claim_field_suicidal_ideation_uncertain",
+        "claim_field_syncope_uncertain",
+        "claim_field_toxic_ingestion_or_overdose_uncertain",
+        "claim_support_only_count",
+        "claim_uncertain_count"
+      ],
+      "partial_weight": 0.5,
+      "class_weight_scheme": "natural",
+      "threshold_mode": false,
+      "common_cohort": {
+        "count": 296,
+        "accuracy": 0.7195945945945946,
+        "macro_f1": 0.27897838899803534,
+        "balanced_accuracy": 0.3333333333333333,
+        "quadratic_weighted_kappa": 0.0,
+        "mean_absolute_ordinal_error": 0.38175675675675674,
+        "log_loss": 0.7285752584925157,
+        "brier_score": 0.41500834488683624,
+        "class_metrics": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 30
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 53
+          },
+          "2": {
+            "precision": 0.7195945945945946,
+            "recall": 1.0,
+            "f1": 0.8369351669941061,
+            "support": 213
+          }
+        },
+        "predicted_class_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 296
+        },
+        "target_class_counts": {
+          "0": 30,
+          "1": 53,
+          "2": 213
+        },
+        "resource_under_estimation_count": 0,
+        "resource_over_estimation_count": 83,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            30
+          ],
+          [
+            0,
+            0,
+            53
+          ],
+          [
+            0,
+            0,
+            213
+          ]
+        ],
+        "ordinal_probability_diagnostics": {
+          "mean_expected_resource_score": 1.6907358485377104,
+          "mean_expected_score_by_target": {
+            "0": 1.5523414722350128,
+            "1": 1.6525915001419909,
+            "2": 1.7197193309511096
+          },
+          "mean_probability_2_plus_by_target": {
+            "0": 0.6707087141081627,
+            "1": 0.7373731968200776,
+            "2": 0.7849397425687812
+          },
+          "auc_r_ge_1": 0.7354636591478697,
+          "auc_r_ge_2": 0.6804400701397137,
+          "expected_score_spearman": 0.29558144747175774
+        }
+      }
+    },
+    {
+      "variant": "ORTHO23_T_nested_threshold_p05",
+      "feature_set": "ORTHO23",
+      "feature_count": 23,
+      "removed_quality_features": [
+        "claim_field_active_bleeding_uncertain",
+        "claim_field_altered_mental_status_uncertain",
+        "claim_field_chest_pain_or_acs_concern_uncertain",
+        "claim_field_dizziness_uncertain",
+        "claim_field_dyspnea_uncertain",
+        "claim_field_fever_or_infection_uncertain",
+        "claim_field_gi_bleeding_melena_uncertain",
+        "claim_field_pain_uncertain",
+        "claim_field_pregnancy_status_or_context_uncertain",
+        "claim_field_respiratory_distress_uncertain",
+        "claim_field_severe_pain_uncertain",
+        "claim_field_stroke_signs_uncertain",
+        "claim_field_suicidal_ideation_uncertain",
+        "claim_field_syncope_uncertain",
+        "claim_field_toxic_ingestion_or_overdose_uncertain",
+        "claim_support_only_count",
+        "claim_uncertain_count"
+      ],
+      "partial_weight": 0.5,
+      "class_weight_scheme": "natural",
+      "threshold_mode": true,
+      "common_cohort": {
+        "count": 296,
+        "accuracy": 0.6283783783783784,
+        "macro_f1": 0.4480367956922387,
+        "balanced_accuracy": 0.4576992352437476,
+        "quadratic_weighted_kappa": 0.32445102393288927,
+        "mean_absolute_ordinal_error": 0.4560810810810811,
+        "log_loss": 0.7285752584925157,
+        "brier_score": 0.41500834488683624,
+        "class_metrics": {
+          "0": {
+            "precision": 0.3611111111111111,
+            "recall": 0.43333333333333335,
+            "f1": 0.39393939393939387,
+            "support": 30
+          },
+          "1": {
+            "precision": 0.18,
+            "recall": 0.16981132075471697,
+            "f1": 0.17475728155339804,
+            "support": 53
+          },
+          "2": {
+            "precision": 0.780952380952381,
+            "recall": 0.7699530516431925,
+            "f1": 0.7754137115839244,
+            "support": 213
+          }
+        },
+        "predicted_class_counts": {
+          "0": 36,
+          "1": 50,
+          "2": 210
+        },
+        "target_class_counts": {
+          "0": 30,
+          "1": 53,
+          "2": 213
+        },
+        "resource_under_estimation_count": 58,
+        "resource_over_estimation_count": 52,
+        "confusion_matrix": [
+          [
+            13,
+            6,
+            11
+          ],
+          [
+            9,
+            9,
+            35
+          ],
+          [
+            14,
+            35,
+            164
+          ]
+        ],
+        "ordinal_probability_diagnostics": {
+          "mean_expected_resource_score": 1.6907358485377104,
+          "mean_expected_score_by_target": {
+            "0": 1.5523414722350128,
+            "1": 1.6525915001419909,
+            "2": 1.7197193309511096
+          },
+          "mean_probability_2_plus_by_target": {
+            "0": 0.6707087141081627,
+            "1": 0.7373731968200776,
+            "2": 0.7849397425687812
+          },
+          "auc_r_ge_1": 0.7354636591478697,
+          "auc_r_ge_2": 0.6804400701397137,
+          "expected_score_spearman": 0.29558144747175774
+        }
+      }
+    },
+    {
+      "variant": "QUALITY17_ONLY_B0_natural_argmax_p05",
+      "feature_set": "QUALITY17_ONLY",
+      "feature_count": 17,
+      "removed_quality_features": [],
+      "partial_weight": 0.5,
+      "class_weight_scheme": "natural",
+      "threshold_mode": false,
+      "common_cohort": {
+        "count": 296,
+        "accuracy": 0.7195945945945946,
+        "macro_f1": 0.27897838899803534,
+        "balanced_accuracy": 0.3333333333333333,
+        "quadratic_weighted_kappa": 0.0,
+        "mean_absolute_ordinal_error": 0.38175675675675674,
+        "log_loss": 0.7894374415558761,
+        "brier_score": 0.44673347058279617,
+        "class_metrics": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 30
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 53
+          },
+          "2": {
+            "precision": 0.7195945945945946,
+            "recall": 1.0,
+            "f1": 0.8369351669941061,
+            "support": 213
+          }
+        },
+        "predicted_class_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 296
+        },
+        "target_class_counts": {
+          "0": 30,
+          "1": 53,
+          "2": 213
+        },
+        "resource_under_estimation_count": 0,
+        "resource_over_estimation_count": 83,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            30
+          ],
+          [
+            0,
+            0,
+            53
+          ],
+          [
+            0,
+            0,
+            213
+          ]
+        ],
+        "ordinal_probability_diagnostics": {
+          "mean_expected_resource_score": 1.7042877792897904,
+          "mean_expected_score_by_target": {
+            "0": 1.7030928769907445,
+            "1": 1.7079384268938946,
+            "2": 1.7035476982848794
+          },
+          "mean_probability_2_plus_by_target": {
+            "0": 0.7744654064805121,
+            "1": 0.777874775573222,
+            "2": 0.7750852141218526
+          },
+          "auc_r_ge_1": 0.5536340852130326,
+          "auc_r_ge_2": 0.5272357033768879,
+          "expected_score_spearman": 0.04680238780492708
+        }
+      }
+    }
+  ],
+  "paired_comparisons": [
+    "FULL40_T_vs_FULL40_B0",
+    "ORTHO23_B0_vs_FULL40_B0",
+    "ORTHO23_T_vs_FULL40_T"
+  ],
+  "note": "All feature-set comparisons use the same frozen case folds, natural class weighting, P05 partial weight, and outer-train-only threshold selection."
+}
