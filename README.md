@@ -678,3 +678,209 @@ outputs/ 中还存在多轮 smoke、dry-run、旧版 01/02/04 和 review 目录�
 
 任何最终性能结论，都必须基于同一 artifact lineage、541 case 主单位和 688 realization 辅助统计。
 
+
+## 11. 03-04的最新进展
+目前项目已经从“规则管线调试”进入“可解释资源决策模型研究”阶段。
+03：生命体征事实层
+当前状态：基本冻结，通过。
+03的职责已经收窄为：
+消费01提供的合法生命体征；
+区分有效、缺失、异常和不可评估；
+输出官方Step D danger-zone信号；
+输出普通safety context；
+不预测最终ESI；
+不把危险生命体征直接转换为ESI 2。
+已确认的问题和改进：
+28条异常measurement被隔离，未进入03有效特征；
+canonical vital与dialogue reveal没有重复计数；
+Step D官方信号与普通安全上下文分离；
+年龄合同暂未启用，因此HR/RR不做不合理年龄推断；
+03官方信号目前主要来自SpO₂，数量较少但符合严格政策。
+03后续只在以下情况才重开：
+01 schema或measurement合同变化；
+vital阈值或Step D政策变化；
+年龄规则启用；
+发现异常值或reveal重复进入下游。
+否则不再继续给03增加临床规则。
+04：资源数量学习层
+04已经拆成三部分。
+04a：监督可行性审计
+已完成：
+使用541个case作为独立实验单位；
+688个instance中的重复realization被正确分组；
+296个case进入资源建模；
+388条instance作为输入；
+弱资源标签为：0资源：30
+1资源：53
+2+资源：213
+
+其中153个case属于相对可信的supported supervision；
+143个case属于partial或弱监督。
+关键结论是：ESI标签不能直接当作干净的资源真值。ESI 3 -> 2+ resources只能作为弱监督代理，而不是严格ground truth。
+04b：prediction-safe特征平面
+目前40维特征矩阵已经完成安全隔离：
+主要来自02可信claim和合法vital context；
+排除了Step D官方危险信号；
+异常measurement没有进入特征；
+canonical measurement不会因dialogue reveal重复计算；
+不使用ground truth、acuity或turn-level triage；
+每个特征可以追溯到evidence。
+04b目前可以冻结。
+04c：资源序数模型
+04c初始Ridge模型暴露了真正问题：
+原始argmax几乎全部预测为2+；
+0资源和1资源召回接近0；
+但概率排序并非完全失效：AUC(R>=1)约0.72至0.75；
+AUC(R>=2)约0.67至0.70；
+期望资源分数整体仍呈0 < 1 < 2+的顺序。
+
+因此不是“特征完全没有信息”，而是：
+类别严重失衡；
+资源监督存在support-target confounding；
+比例优势结构过强；
+默认argmax不适合当前资源任务；
+1-resource与2+之间缺乏足够可分性。
+B2分层阈值实验
+B2已经证明模型特定的层级阈值比直接argmax更合适。
+Conditional ORTHO B2a
+优点：
+Macro-F1最高，约0.495；
+R1 recall明显改善；
+更偏性能。
+问题：
+2+ recall下降到约0.75；
+不满足安全主线要求。
+Dual ORTHO B2b
+优点：
+2+ recall约0.906；
+2+ -> 0较低；
+QWK和MAOE较好；
+安全性更强。
+问题：
+R1 recall约0.094；
+只有3/5 folds出现非零R1召回；
+仍然存在1-resource塌缩。
+因此目前应保留两个参考点：
+Conditional ORTHO B2a：性能参考；
+Dual ORTHO B2b：安全参考。
+它们都还不是最终可发布模型，05/06暂时不能接入。
+当前04的下一步
+下一步是受控运行 Fused Conditional Ridge，而不是继续增加规则。
+目标：
+第一边界学习 R>=1；
+第二边界学习 R>=2 | R>=1；
+两个head共享部分斜率结构；
+保留不同intercept；
+通过融合惩罚减少fold间不稳定；
+不进行事后系数平均。
+首轮只研究：
+rho = 0, 0.1, 0.3, 1, 3, 10
+固定：
+296 case；
+相同grouped folds；
+natural weighting；
+partial weight = 0.5；
+ORTHO23作为主实验；
+FULL40作为敏感性实验；
+B2a和B2b分别评估。
+必须保证：
+rho=0严格复现Conditional ORTHO；
+R1 recall在至少4/5 folds非零；
+2+ recall维持约0.87至0.90以上；
+2+ -> 0不明显恶化；
+概率质量和Boundary 2稳定性不下降；
+不能只因Macro-F1提高就直接放行。
+如果融合失败，下一步才考虑：
+两个独立累计模型；
+partial supervision重新分层；
+resource ontology兼容性特征；
+支持集合与资源数量的结构化建模。
+05：ESI政策协调与最终候选生成
+05不负责训练模型，也不允许LLM自由决定最终ESI。
+它的职责是把：
+02可信Step A/B claims
++ 03生命体征事实
++ 04资源数量概率/分支
+通过ESI Handbook政策图进行确定性协调。
+建议保留两条输出路径：
+Strict path
+只使用：
+已确认的Step A；
+已确认的Step B；
+已通过资源模型和政策门禁的resource path；
+不接受未经验证的rescue。
+Calibrated path
+只允许受控的校准策略，例如：
+高质量uncertain second resource promotion；
+03 danger-zone safety rescue；
+明确的资源层级阈值；
+必须保留原始路径和promotion原因。
+05应输出：
+provisional ESI；
+final candidate ESI；
+触发的Step A/B/C/D路径；
+resource probability和threshold；
+safety override；
+uncertainty/review状态；
+supporting evidence IDs；
+是否满足人工复核条件。
+05不应读取raw turn-level triage，也不能用gold label反向修正预测。
+06：评估、故障归因与反馈闭环
+06应同时承担评估和诊断，而不是只输出一个accuracy。
+评估单位
+必须同时报告：
+688个instance级结果；
+541个case级结果；
+147组duplicate realization的一致性；
+所有fold按case分组，不能让同一case跨fold。
+核心指标
+包括：
+accuracy；
+macro-F1；
+balanced accuracy；
+QWK；
+MAE；
+每个ESI类别recall；
+undertriage与overtriage；
+高危类别的安全错误；
+resource boundary AUC；
+概率log loss、Brier和校准；
+多realization一致性。
+归因分析
+需要区分：
+Step A漏召回；
+Step B边界过宽或过窄；
+03 Step D缺失或冲突；
+04资源候选不足；
+04资源模型排序失败；
+阈值导致R1压缩；
+weak label与文本证据不一致；
+ESI gold与evidence policy不一致。
+Hermes反馈
+Hermes应把错误分成：
+工程错误；
+证据错误；
+policy错误；
+模型排序错误；
+标签/证据不一致；
+可修复的边界样本；
+不应强行拟合的病例。
+它可以形成preference-style diagnostics和反事实比较，但不应直接把最终标签硬编码回01/02。
+最终路线
+当前最合理的顺序是：
+03冻结
+→ 04a/04b冻结
+→ 04c Fused Conditional Ridge
+→ B2a/B2b双路径评估
+→ 04资源模型放行判断
+→ 05 strict/calibrated reconciliation
+→ 06 case-level evaluation + Hermes diagnosis
+当前明确不应做：
+不再给01/02无限添加关键词；
+不把Step D直接当作ESI 2；
+不让LLM直接输出最终ESI；
+不把弱ESI标签当作干净资源真值；
+不用单次accuracy决定模型是否成功；
+不在融合模型前同时加入class weight、soft label和feature fusion。
+一句话总结：
+03已经是稳定的生命体征事实层；04已经从规则资源抽取转向可解释资源序数学习，但04c仍处于模型选择阶段。下一步应验证Fused Conditional Ridge能否同时保住2+安全性并恢复1-resource召回；只有资源层稳定后，05/06才应正式接入。
