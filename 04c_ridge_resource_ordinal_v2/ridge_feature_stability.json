@@ -1,0 +1,285 @@
+{
+  "schema_version": "04c_ridge_resource_ordinal_v2",
+  "features": {
+    "active_problem_domain_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.5797384820134516,
+      "coefficient_sd": 0.06882432794276068,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_active_bleeding_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.4427832441097509,
+      "coefficient_sd": 0.17134293042170382,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_active_bleeding_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.36593626151792946,
+      "coefficient_sd": 0.08952318695148068,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_altered_mental_status_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.5743333938687875,
+      "coefficient_sd": 0.11698665470056135,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_altered_mental_status_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.03365651126096956,
+      "coefficient_sd": 0.047295480958232335,
+      "nonzero_sign_agreement": 0.8,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_chest_pain_or_acs_concern_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.1445129745884794,
+      "coefficient_sd": 0.06112651376265038,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_chest_pain_or_acs_concern_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.009743336907447966,
+      "coefficient_sd": 0.06428131928807682,
+      "nonzero_sign_agreement": 0.6,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_dizziness_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.9127867473711374,
+      "coefficient_sd": 0.03864037929900102,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_dizziness_uncertain": {
+      "estimable_fold_count": 4,
+      "coefficient_mean": 0.05128028295661154,
+      "coefficient_sd": 0.010721352051187245,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 1
+    },
+    "claim_field_dyspnea_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.08580173390205481,
+      "coefficient_sd": 0.155490083584152,
+      "nonzero_sign_agreement": 0.8,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_dyspnea_uncertain": {
+      "estimable_fold_count": 4,
+      "coefficient_mean": -0.17737168798623262,
+      "coefficient_sd": 0.009235817456553972,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 1
+    },
+    "claim_field_fever_or_infection_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.1721134147213781,
+      "coefficient_sd": 0.12473975742920841,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_fever_or_infection_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.008603665600322523,
+      "coefficient_sd": 0.06099424513074467,
+      "nonzero_sign_agreement": 0.6,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_gi_bleeding_melena_present": {
+      "estimable_fold_count": 4,
+      "coefficient_mean": 0.13775454232752543,
+      "coefficient_sd": 0.016038113386912477,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 1
+    },
+    "claim_field_gi_bleeding_melena_uncertain": {
+      "estimable_fold_count": 4,
+      "coefficient_mean": 0.004260250757698421,
+      "coefficient_sd": 0.0007464572362975075,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 1
+    },
+    "claim_field_pain_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.49517816096415695,
+      "coefficient_sd": 0.08065626655360025,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_pain_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.15333333573551816,
+      "coefficient_sd": 0.06711555722967737,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_pregnancy_status_or_context_present": {
+      "estimable_fold_count": 4,
+      "coefficient_mean": 0.051280326073025205,
+      "coefficient_sd": 0.010721343839746413,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 1
+    },
+    "claim_field_pregnancy_status_or_context_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.17700889705613668,
+      "coefficient_sd": 0.022629086298174457,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_respiratory_distress_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.021824332114800005,
+      "coefficient_sd": 0.010632137116720071,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_respiratory_distress_uncertain": {
+      "estimable_fold_count": 0,
+      "coefficient_mean": null,
+      "coefficient_sd": null,
+      "nonzero_sign_agreement": null,
+      "not_estimable_fold_count": 5
+    },
+    "claim_field_severe_pain_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.33072560895195535,
+      "coefficient_sd": 0.09151410041495424,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_severe_pain_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.021127139693974797,
+      "coefficient_sd": 0.07803700021089346,
+      "nonzero_sign_agreement": 0.8,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_stroke_signs_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.19037391881098908,
+      "coefficient_sd": 0.058788782297022335,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_stroke_signs_uncertain": {
+      "estimable_fold_count": 0,
+      "coefficient_mean": null,
+      "coefficient_sd": null,
+      "nonzero_sign_agreement": null,
+      "not_estimable_fold_count": 5
+    },
+    "claim_field_suicidal_ideation_present": {
+      "estimable_fold_count": 0,
+      "coefficient_mean": null,
+      "coefficient_sd": null,
+      "nonzero_sign_agreement": null,
+      "not_estimable_fold_count": 5
+    },
+    "claim_field_suicidal_ideation_uncertain": {
+      "estimable_fold_count": 4,
+      "coefficient_mean": 0.071180938831601,
+      "coefficient_sd": 0.007219818629019744,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 1
+    },
+    "claim_field_syncope_present": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.15592488581105102,
+      "coefficient_sd": 0.07534181882035086,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_syncope_uncertain": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.054214886520899216,
+      "coefficient_sd": 0.028518403923296753,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_field_toxic_ingestion_or_overdose_uncertain": {
+      "estimable_fold_count": 0,
+      "coefficient_mean": null,
+      "coefficient_sd": null,
+      "nonzero_sign_agreement": null,
+      "not_estimable_fold_count": 5
+    },
+    "claim_negative_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.1473447126285796,
+      "coefficient_sd": 0.04765692680745122,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_present_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.14424538497603384,
+      "coefficient_sd": 0.0693762330945721,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_support_only_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.07010809331680393,
+      "coefficient_sd": 0.03839924960540828,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "claim_uncertain_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.18024779068802746,
+      "coefficient_sd": 0.03576380293806759,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "independent_active_evidence_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.09319364858361484,
+      "coefficient_sd": 0.13380258523001837,
+      "nonzero_sign_agreement": 0.8,
+      "not_estimable_fold_count": 0
+    },
+    "nurse_observed_present_claim_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.13099699317411784,
+      "coefficient_sd": 0.043033957388533904,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "pain_score_value": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": 0.08665006566790488,
+      "coefficient_sd": 0.05333699588458386,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "patient_present_claim_count": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.12341034387065361,
+      "coefficient_sd": 0.07153436173943112,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 0
+    },
+    "valid_pain_score": {
+      "estimable_fold_count": 5,
+      "coefficient_mean": -0.17599627606483254,
+      "coefficient_sd": 0.1206631864280538,
+      "nonzero_sign_agreement": 0.8,
+      "not_estimable_fold_count": 0
+    },
+    "valid_structured_vital_count": {
+      "estimable_fold_count": 4,
+      "coefficient_mean": -0.18045729705525426,
+      "coefficient_sd": 0.0011638237669645579,
+      "nonzero_sign_agreement": 1.0,
+      "not_estimable_fold_count": 1
+    }
+  }
+}

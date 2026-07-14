@@ -1,0 +1,181 @@
+{
+  "schema_version": "04c_ridge_resource_ordinal_v2",
+  "input_schema_version": "04_resource_ordinal_feasibility_v1.2",
+  "input_dir": "outputs\\04_resource_ordinal_feasibility_v1_2_full688",
+  "input_hashes": {
+    "audit": "83da62683a315f1e24a59951fc1dafaa45f000f63fca7de3de08cbc09ce2b134",
+    "dictionary": "2468467dd318d3b8a3de94362f43c03a2aadace0db53997fede3c035c0e578da",
+    "matrix": "eb71aea70d3df263f5a73e16002192f6e7a1fddd018a3d3de766e314b1a51d9e",
+    "labels": "3fa1acd66ab0d3231b6e29c9404cd2713af1223482b1132b647b1bd77faf5e53",
+    "folds": "ad7056fffa71331e100ce6d2db05aac99617bec2694254f8b44797b0b1b25c37",
+    "weights": "f99d76438ded257ff88f18a57d3811211601dc777d3e294d34611db0fa927df8",
+    "availability": "3551e8e6f2e43356c6d245db274124152c9f7f0d737fb12c0d181cda6f69e678"
+  },
+  "frozen_04_audit_inputs": {
+    "timeline_file": "outputs\\01_timelines_v4_5_4_narrow_semantic_patch_final\\evidence_timeline.jsonl",
+    "timeline_sha256": "b58472054c039eaea0bb4f8e7d0d68dd60b7be7fb3d1a3c07640d27520f794fc",
+    "claims_file": "outputs\\02_claim_qualification_v3_full688_resumable\\02_qualified_claims.jsonl",
+    "claims_sha256": "3149a1d895229eddb0db52f38d897efd61b75c85b9d206b2f28d3c5ecca9e5be",
+    "vitals_file": "outputs\\03_vital_state_outputs_v1_full688\\03_vital_state_outputs.jsonl",
+    "vitals_sha256": "1c3858aa23bbcb18293e4b69ff359d539b956529c11cbd80c1af905c66c8fa5d",
+    "raw_dir": "transcripts\\mimic",
+    "raw_label_manifest_sha256": "ea35c3405df047c1cd86c74697aa2ed76aa3ee3737202839fa6349377321fb32"
+  },
+  "model_name": "weighted_proportional_odds_ridge",
+  "target": "weak_resource_bucket {0,1,2_plus}",
+  "model_feature_count": 40,
+  "model_features": [
+    "active_problem_domain_count",
+    "claim_field_active_bleeding_present",
+    "claim_field_active_bleeding_uncertain",
+    "claim_field_altered_mental_status_present",
+    "claim_field_altered_mental_status_uncertain",
+    "claim_field_chest_pain_or_acs_concern_present",
+    "claim_field_chest_pain_or_acs_concern_uncertain",
+    "claim_field_dizziness_present",
+    "claim_field_dizziness_uncertain",
+    "claim_field_dyspnea_present",
+    "claim_field_dyspnea_uncertain",
+    "claim_field_fever_or_infection_present",
+    "claim_field_fever_or_infection_uncertain",
+    "claim_field_gi_bleeding_melena_present",
+    "claim_field_gi_bleeding_melena_uncertain",
+    "claim_field_pain_present",
+    "claim_field_pain_uncertain",
+    "claim_field_pregnancy_status_or_context_present",
+    "claim_field_pregnancy_status_or_context_uncertain",
+    "claim_field_respiratory_distress_present",
+    "claim_field_respiratory_distress_uncertain",
+    "claim_field_severe_pain_present",
+    "claim_field_severe_pain_uncertain",
+    "claim_field_stroke_signs_present",
+    "claim_field_stroke_signs_uncertain",
+    "claim_field_suicidal_ideation_present",
+    "claim_field_suicidal_ideation_uncertain",
+    "claim_field_syncope_present",
+    "claim_field_syncope_uncertain",
+    "claim_field_toxic_ingestion_or_overdose_uncertain",
+    "claim_negative_count",
+    "claim_present_count",
+    "claim_support_only_count",
+    "claim_uncertain_count",
+    "independent_active_evidence_count",
+    "nurse_observed_present_claim_count",
+    "pain_score_value",
+    "patient_present_claim_count",
+    "valid_pain_score",
+    "valid_structured_vital_count"
+  ],
+  "forbidden_model_features": [],
+  "outer_fold_count": 5,
+  "inner_lambda_selection": true,
+  "lambda_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "selected_lambdas": {
+    "0": 0.01,
+    "1": 0.01,
+    "2": 0.01,
+    "3": 0.01,
+    "4": 0.01
+  },
+  "processed_instance_count": 688,
+  "eligible_instance_count": 388,
+  "eligible_case_count": 296,
+  "target_class_counts_instance": {
+    "0": 59,
+    "1": 83,
+    "2": 246
+  },
+  "target_class_counts_case": {
+    "0": 30,
+    "1": 53,
+    "2": 213
+  },
+  "preflight": {
+    "train_validation_case_overlap": 0,
+    "duplicate_realization_cross_fold": 0,
+    "oof_eligible_case_coverage": true,
+    "oof_eligible_instance_coverage": true,
+    "probability_nonfinite_count": 0,
+    "probability_sum_violation_count": 0,
+    "threshold_order_violation_count": 0,
+    "training_weight_mismatch_count": 0,
+    "validation_used_for_preprocessing": 0,
+    "validation_used_for_feature_selection": 0,
+    "final_esi_output_count": 0,
+    "step_d_application_count": 0,
+    "step_d_model_feature_count": 0,
+    "invalid_measurement_feature_count": 0,
+    "optimizer_failure_count": 0,
+    "objective_nonfinite_count": 0
+  },
+  "optimizer_records": [
+    {
+      "fold_id": 0,
+      "success": true,
+      "status": 0,
+      "iterations": 40,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "fold_id": 1,
+      "success": true,
+      "status": 0,
+      "iterations": 41,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "fold_id": 2,
+      "success": true,
+      "status": 0,
+      "iterations": 40,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "fold_id": 3,
+      "success": true,
+      "status": 0,
+      "iterations": 41,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    },
+    {
+      "fold_id": 4,
+      "success": true,
+      "status": 0,
+      "iterations": 40,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+    }
+  ],
+  "optimizer_failure_count": 0,
+  "objective_nonfinite_count": 0,
+  "training_weight_sum": 224.5,
+  "supervision_weight_sum": 224.5,
+  "release_gates": {
+    "all_preflight_checks_passed": true,
+    "model_fit_performed": true,
+    "final_esi_generated": false,
+    "artifact_release_gate_passed": true,
+    "model_quality_gate_passed": false,
+    "downstream_model_ready": false,
+    "release_gate_passed": true,
+    "release_gate_scope": "artifact_integrity_and_reproducibility_only"
+  },
+  "model_quality": {
+    "predicted_class_coverage": 1,
+    "class_prediction_collapse": true,
+    "beats_empirical_prior_macro_f1": false,
+    "beats_empirical_prior_balanced_accuracy": false,
+    "all_class_recalls_positive": false,
+    "quadratic_weighted_kappa_positive": false,
+    "cumulative_auc_above_chance": true,
+    "model_quality_gate_passed": false,
+    "downstream_model_ready": false,
+    "interpretation": "A structural baseline may be retained for diagnosis, but class collapse blocks downstream resource-path use."
+  },
+  "note": "This is a resource ordinal baseline, not a clinical ESI predictor. Step D is diagnostic-only and never applied here."
+}
