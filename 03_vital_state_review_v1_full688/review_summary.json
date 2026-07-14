@@ -1,0 +1,15 @@
+{
+  "schema_version": "03_vital_state_v1.0",
+  "output_rows": 688,
+  "official_signal_rows": 7,
+  "signal_field_counts": {
+    "spo2": 7
+  },
+  "missing_required_vital_rows": 0,
+  "quarantined_rows": 27,
+  "quarantined_measurement_count": 28,
+  "invalid_measurement_referenced_count": 0,
+  "suspicious_count": 0,
+  "audit_release_gate_passed": true,
+  "hard_gate_passed": true
+}
