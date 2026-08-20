@@ -1,0 +1,40 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+src/.env
+project/.env
+research/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Data, generated artifacts, caches, and trained models
+transcripts/
+outputs/
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.safetensors
+
+# Legacy development trees are not part of the current 00-06 release
+project/
+research/
+
