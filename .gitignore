@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+data/*.json
+data/*.jsonl
+data/*.csv
+outputs/
+resources/models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+adapter_model.*

@@ -1,0 +1,10 @@
+accelerate
+bitsandbytes
+datasets
+numpy
+peft
+python-dotenv
+scikit-learn
+scipy
+torch
+transformers
