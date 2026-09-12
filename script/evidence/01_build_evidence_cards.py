@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
@@ -10,12 +11,12 @@ from pathlib import Path
 import torch
 from transformers import AutoModelForTokenClassification, AutoTokenizer
 
-from script.common.imcs21_common import ENTITY_TYPES, bio_spans, entity_prf, read_jsonl, sha256, stable_id, write_jsonl
+from scripts.common.imcs21_common import ENTITY_TYPES, bio_spans, entity_prf, read_jsonl, sha256, stable_id, write_jsonl
 
 
 ROOT = Path(__file__).resolve().parents[2]
 CONTRACT = ROOT / "outputs" / "00_dataset_contract"
-MODEL = ROOT / "resources" / "models" / "imcs21-roberta-ner"
+MODEL = Path(os.environ.get("EVIDENCE_NER_MODEL", ROOT / "resources" / "models" / "imcs21-roberta-ner"))
 OUTPUT = ROOT / "outputs" / "01_evidence_cards"
 NEGATION = re.compile(r"没有|沒有|没(?:有)?|沒(?:有)?|无|無|未|不(?:是|会|再|怎么|太)?|否认|否認")
 HISTORY = re.compile(r"以前|之前|既往|过去|小时候|曾经|原来|上次|此前|先前|早些时候|前段时间|前阵子|去年|昨天|昨晚|前天|上周|上个月|前几天|前(?:\d+|[一二两三四五六七八九十]+)天|(?:\d+|[一二两三四五六七八九十]+)(?:个)?(?:月|星期|周|年)(?:前|的时候|时候)|\d+月底|有过(?:一|1)?次")

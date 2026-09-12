@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 from pathlib import Path
 
@@ -17,11 +18,15 @@ from transformers import (
     set_seed,
 )
 
-from script.common.imcs21_common import BIO_LABELS, entity_prf, sha256
+from scripts.common.imcs21_common import BIO_LABELS, entity_prf, sha256
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE_MODEL = ROOT / "resources" / "models" / "roberta-med-inquiry-base"
+DATA = Path(os.environ.get("IMCS21_DATA_DIR", ROOT / "data"))
+BASE_MODEL = Path(os.environ.get(
+    "MEDICAL_NER_BASE_MODEL",
+    ROOT / "resources" / "models" / "roberta-med-inquiry-base",
+))
 MODEL_OUTPUT = ROOT / "resources" / "models" / "imcs21-roberta-ner"
 RUN_OUTPUT = ROOT / "outputs" / "01_evidence_extractor_training"
 LABEL2ID = {label: index for index, label in enumerate(BIO_LABELS)}
@@ -102,8 +107,8 @@ def main() -> None:
     MODEL_OUTPUT.mkdir(parents=True, exist_ok=True)
     RUN_OUTPUT.mkdir(parents=True, exist_ok=True)
 
-    train_rows = load_rows(ROOT / "train.json")
-    dev_rows = load_rows(ROOT / "dev.json")
+    train_rows = load_rows(DATA / "train.json")
+    dev_rows = load_rows(DATA / "dev.json")
     if args.limit_train:
         train_rows = train_rows[:args.limit_train]
     if args.limit_dev:
@@ -163,7 +168,7 @@ def main() -> None:
         "labels": list(BIO_LABELS),
         "hyperparameters": vars(args),
         "evaluation": evaluation,
-        "source_hashes": {"train": sha256(ROOT / "train.json"), "dev": sha256(ROOT / "dev.json")},
+        "source_hashes": {"train": sha256(DATA / "train.json"), "dev": sha256(DATA / "dev.json")},
     }
     (RUN_OUTPUT / "training_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
